@@ -24,4 +24,11 @@ handle_result.({:ok, some_result}) #  Handling result...
 handle_result.({:error}) #  An error has occurred!
 
 # Named Functions
+defmodule Greeter do
+ def hello(name) do
+  "Hello, " <> name #join
+ end
+end
+
+IO.puts Greeter.hello("Matias")
 
