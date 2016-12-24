@@ -1,5 +1,16 @@
+#elixir
+/ebin
 /_build
 /cover
 /deps
 erl_crash.dump
+*.beam
 *.ez
+
+# vim
+*.swp
+*.swo
+*.~
+
+# kde
+.directory
