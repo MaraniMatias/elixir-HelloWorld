@@ -1,6 +1,3 @@
-# https://workingdevblog.wordpress.com/2016/08/25/trader-app-hello-elixir/
-# https://elixirschool.com/lessons/basics/functions/
-
 # Anonymous Functions
 add = fn a, b -> a + b end
 sum = &(&1 + &2)
@@ -33,3 +30,5 @@ end
 
 IO.puts Greeter.hello("Matias")
 IO.puts Greeter.hello2("Matias")
+
+

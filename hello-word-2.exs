@@ -1,4 +1,3 @@
-# https://oylenshpeegul.wordpress.com/2015/10/25/hello-elixir/
 
 greet = fn s -> IO.puts "1: Hello, #{s}!" end
 
