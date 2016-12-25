@@ -10,13 +10,11 @@ IO.puts sum.(5,4) # 9
 
 # Pattern Matching
 handle_result = fn
-  {:ok, result} ->
-    IO.puts "Handling result..."
-  {:error} ->
-    IO.puts "An error has occurred!"
+  {:ok, result} ->  IO.puts "Handling result... #{result}"
+  {:error} ->  IO.puts "An error has occurred!"
 end
 
-some_result = 1
+some_result = "abc.." 
 handle_result.({:ok, some_result}) #  Handling result...
 handle_result.({:error}) #  An error has occurred!
 
@@ -93,3 +91,23 @@ end
 IO.puts DefArguments.hello("Sean", "en")  # "Hello, Sean"
 IO.puts DefArguments.hello("Sean")        # "Hello, Sean"
 IO.puts DefArguments.hello("Sean", "es")  # "Hola, Sean"
+
+defmodule  DefArguments2 do
+  def hello(names, country \\ "en")
+  def hello(names, country) when is_list(names) do
+    names
+    |> Enum.join(", ")
+    |> hello(country)
+  end
+
+  # def hello(name, country \\ "en").... ** (CompileError)
+  def hello(name, country) when is_binary(name) do
+    phrase(country) <> name
+  end
+
+  defp phrase("en"), do: "Hello, "
+  defp phrase("es"), do: "Hola, "
+end
+
+IO.puts DefArguments2.hello ["Sean", "Steve"] # "Hello, Sean, Steve"
+IO.puts DefArguments2.hello ["Sean", "Steve"], "es" # "Hola, Sean, Steve"
