@@ -53,3 +53,12 @@ end
 IO.puts Generate.hello()
 IO.puts Generate.hello("Matias")
 IO.puts Generate.hello("Romina","Marani")
+
+# Private Functions
+defmodule Func do
+  def hello(name), do: phrase <> name
+  defp phrase, do: "Hello, "
+end
+
+IO.puts Func.hello("Sean") # "Hello, Sean"
+
