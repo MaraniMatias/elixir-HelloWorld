@@ -21,8 +21,9 @@ cd elixir-hola-mundo
 elixir hello-word.exs
 ```
 ## Bibliography
+* http://elixir-lang.org/getting-started/introduction.html
+* http://elixir-lang.org/docs.html
+* https://elixirschool.com
 * https://workingdevblog.wordpress.com/2016/08/25/trader-app-hello-elixir/
-* https://elixirschool.com/lessons/basics/functions/
-* https://oylenshpeegul.wordpress.com/2015/10/25/hello-elixir/
 * https://oylenshpeegul.wordpress.com/2015/10/25/hello-elixir/
 
