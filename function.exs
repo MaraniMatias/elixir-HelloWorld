@@ -81,4 +81,15 @@ end
 IO.puts Guards.fnc ["Sean", "Steve"] # "Hello, Sean, Steve"
 IO.puts Guards.fnc "Cristian"  # Hola Cristian
 
+# Default Arguments
+defmodule DefArguments do
+  def hello(name, country \\ "en") do
+    phrase(country) <> name
+  end
+  defp phrase("en"), do: "Hello, "
+  defp phrase("es"), do: "Hola, "
+end
 
+IO.puts DefArguments.hello("Sean", "en")  # "Hello, Sean"
+IO.puts DefArguments.hello("Sean")        # "Hello, Sean"
+IO.puts DefArguments.hello("Sean", "es")  # "Hola, Sean"
