@@ -74,7 +74,7 @@ defmodule Guards do
   def fnc(names) when is_list(names) do
     names
     |> Enum.join(", ")
-    |> hello
+    |> fnc
   end
 end
 
