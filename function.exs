@@ -47,8 +47,7 @@ defmodule Generate do
   # Hello/1
   def hello(name), do: "Hola " <> name
   # Hello/2
-  def hello(name,surname), do: "Hola " ++ name <> surname
-  # "Hello, #{name1} and #{name2}"
+  def hello(name,surname), do: "Hola #{name}  #{surname}"
 end
 
 IO.puts Generate.hello()
