@@ -1,4 +1,3 @@
-
 greet = fn s -> IO.puts "1: Hello, #{s}!" end
 
 hello = fn

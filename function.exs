@@ -31,4 +31,26 @@ end
 IO.puts Greeter.hello("Matias")
 IO.puts Greeter.hello2("Matias")
 
+# Recursion
+defmodule Length do
+  def of([]), do: 0
+  def of([_|t]), do: 1 + of(t)
+end
 
+IO.puts Length.of []        # 0
+IO.puts Length.of [1, 2, 3] # 3
+
+# Function Naming and Arity
+defmodule Generate do
+  # Hello/0
+  def hello(), do: "Hola."
+  # Hello/1
+  def hello(name), do: "Hola " <> name
+  # Hello/2
+  def hello(name,surname), do: "Hola " ++ name <> surname
+  # "Hello, #{name1} and #{name2}"
+end
+
+IO.puts Generate.hello()
+IO.puts Generate.hello("Matias")
+IO.puts Generate.hello("Romina","Marani")
