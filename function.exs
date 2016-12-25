@@ -62,3 +62,24 @@ end
 
 IO.puts Func.hello("Sean") # "Hello, Sean"
 
+# Guards
+
+defmodule Guards do
+  # Private
+  defp hello, do: "Hola, "
+  # fn/1 not list
+  def fn(name) when is_binary(name) do
+    hello <> name
+  end
+  # fn/1 with list
+  def fn(names) when is_list(names) do
+    names
+    |> Enum.join(", ")
+    |> hello
+  end
+end
+
+IO.puts Guards.fn ["Sean", "Steve"] # "Hello, Sean, Steve"
+IO.puts Guards.fn "Cristian"  # Hola Cristian
+
+
