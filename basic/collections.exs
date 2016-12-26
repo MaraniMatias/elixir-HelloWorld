@@ -28,4 +28,16 @@ IO.puts [{:foo, "bar"}, {:hello, "world"}]  # [foo: "bar", hello: "world"]
 ## Keys are not unique.
 
 # Maps
+map = %{:foo => "bar", "hello" => :world}
+IO.puts map           # %{:foo => "bar", "hello" => :world}
+IO.puts map[:foo]     # "bar"
+IO.puts map["hello"]  # :world
 
+key = "hello"
+IO.puts  %{key => "world"} # %{"hello" => "world"}
+
+map1 =  %{foo: "bar", hello: "world"}
+%{foo: "bar", hello: "world"} == %{:foo => "bar", :hello => "world"}  # true
+
+IO.puts  %{map1 | foo: "baz"}  # %{foo: "baz", hello: "world"}
+IO.puts  map1.hello            # "world"
