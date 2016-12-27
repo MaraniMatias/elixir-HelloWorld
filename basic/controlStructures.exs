@@ -18,6 +18,8 @@ unless is_integer("hello") do
   IO.puts "Not an Int"
 end
 
+is_number(if true do  1 + 2 end) # true
+
 # case
 case {:ok, "Hello World"} do
  {:ok, result} -> result
