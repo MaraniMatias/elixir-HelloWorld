@@ -39,11 +39,14 @@ Enum.map_reduce([1, 2, 3], 0, fn(x, acc) -> {x * 2, x + acc} end)  {[2, 4, 6], 6
 
 # min
 IO.puts Enum.min([5, 3, 0, -1]) # -1
-
+IO.puts Enum.min_by(["a", "aa", "aaa"], fn(x) -> String.length(x) end)  #  "a"
+IO.puts Enum.min_by(["a", "aa", "aaa", "b", "bbb"], &String.length/1)   #  "a"
 # max
 IO.puts Enum.max([5, 3, 0, -1]) # 5
 IO.puts Enum.max_by(["a", "aa", "aaa"], fn(x) -> String.length(x) end) # "aaa"
 IO.puts Enum.max_by(["a", "aa", "aaa", "b", "bbb"], &String.length/1) # "aaa"
+# min_max
+IO.puts Enum.min_max([2, 3, 1]) # {1, 3}
 
 # reduce
 IO.puts Enum.reduce([1, 2, 3], 10, fn(x, acc) -> x + acc end) # 16
