@@ -20,6 +20,11 @@ cd elixir-hola-mundo
 
 elixir hello-word.exs
 ```
+## interative mode
+```sh
+iex -S mix
+```
+
 ## Bibliography
 * http://elixir-lang.org/getting-started/introduction.html
 * http://elixir-lang.org/docs.html
