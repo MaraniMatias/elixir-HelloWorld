@@ -35,7 +35,7 @@ Enum.map([a: 1, b: 2], fn({k, v}) -> {k, -v} end) # [a: -1, b: -2]
 Enum.map_join([1, 2, 3], &(&1 * 2)) # "246"
 Enum.map_join([1, 2, 3], " = ", &(&1 * 2)) # "2 = 4 = 6"
 ## reduce
-Enum.map_reduce([1, 2, 3], 0, fn(x, acc) -> {x * 2, x + acc} end)  {[2, 4, 6], 6}
+Enum.map_reduce([1, 2, 3], 0, fn(x, acc) -> {x * 2, x + acc} end) # {[2, 4, 6], 6}
 
 # min
 IO.puts Enum.min([5, 3, 0, -1]) # -1
@@ -49,9 +49,9 @@ IO.puts Enum.max_by(["a", "aa", "aaa", "b", "bbb"], &String.length/1) # "aaa"
 IO.puts Enum.min_max([2, 3, 1]) # {1, 3}
 
 # reduce
-IO.puts Enum.reduce([1, 2, 3], 10, fn(x, acc) -> x + acc end) # 16
-IO.puts  Enum.reduce([1, 2, 3], fn(x, acc) -> x + acc end) # 6
-IO.puts  Enum.reduce(["a","b","c"], "1", fn(x,acc)-> x <> acc end) # "cba1"
+IO.puts Enum.reduce([1, 2, 3], 10, fn(x, acc) -> x + acc end)     # 16
+IO.puts Enum.reduce([1, 2, 3], fn(x, acc) -> x + acc end)         # 6
+IO.puts Enum.reduce(["a","b","c"], "1", fn(x,acc)-> x <> acc end) # "cba1"
 
 # sort
 Enum.sort([5, 6, 1, 3, -1, 4])        # [-1, 1, 3, 4, 5, 6]
@@ -71,6 +71,6 @@ Enum.member?(1..10, 5)               # true
 Enum.member?(1..10, 5.0)             # false
 Enum.member?([1.0, 2.0, 3.0], 2)     # false
 Enum.member?([1.0, 2.0, 3.0], 2.000) # true
-Enum.member?([:a, :b, :c], :d)            # false
+Enum.member?([:a, :b, :c], :d)       # false
 
 ## elixir-lang.org/docs/stable/elixir/Enum.html
