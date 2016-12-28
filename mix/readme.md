@@ -3,7 +3,7 @@
 mix new example
 ```
 
-# mix.exs (package.json in node.js)
+# mix.exs (package.json in NodeJS)
   Here we configure our application, dependencies, environment, and version.
 
 # Compilation
@@ -12,6 +12,7 @@ mix new example
 mix compile
 ```
 # Managing Dependencies
+ (hex.pm)[Hex (NPM in NodeJS)]
 ```sh
 mix local.hex
 mix deps.get
@@ -26,8 +27,12 @@ The current environment can be accessed using Mix.env. As expected, the environm
 MIX_ENV=prod mix compile
 ```
 
-#ExDoc
+# Hello
+```sh
+mix hello
+```
 
+# ExDoc
 ```sh
 mix new greet_everyone
 mix local.hex
@@ -37,4 +42,14 @@ iex(1)> h Greeter.hello
 ```sh
 mix deps.get # gets ExDoc + Earmark.
 mix docs # makes the documentation.
+```
+
+# Phoenix (Express in NodeJS)
+(http://www.phoenixframework.org/docs/installation)[Install Phoenix]
+```sh
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+
+mix phoenix.new my_phoenix_app
+cd my_phonenix_app
+mix deps.get
 ```
