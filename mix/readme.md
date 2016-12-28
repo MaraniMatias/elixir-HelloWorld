@@ -25,3 +25,14 @@ The current environment can be accessed using Mix.env. As expected, the environm
 MIX_ENV=prod mix compile
 ```
 
+#ExDoc
+
+```sh
+mix new greet_everyone
+iex -S mix
+iex(1)> h Greeter.hello
+```
+```sh
+mix deps.get # gets ExDoc + Earmark.
+mix docs # makes the documentation.
+```
