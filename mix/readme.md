@@ -13,6 +13,7 @@ mix compile
 ```
 # Managing Dependencies
 ```sh
+mix local.hex
 mix deps.get
 ```
 # Environments
@@ -29,6 +30,7 @@ MIX_ENV=prod mix compile
 
 ```sh
 mix new greet_everyone
+mix local.hex
 iex -S mix
 iex(1)> h Greeter.hello
 ```

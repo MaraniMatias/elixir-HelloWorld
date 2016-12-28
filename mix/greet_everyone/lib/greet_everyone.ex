@@ -1,0 +1,2 @@
+defmodule GreetEveryone do
+end
