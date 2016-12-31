@@ -10,7 +10,7 @@ defmodule ExampleTest do
   test "assert " do
     assert 1 + 1 == 2
   end
-  
+
   test "assert " do
     assert 1 + 1 == 3
   end
