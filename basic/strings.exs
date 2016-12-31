@@ -1,5 +1,10 @@
 IO.puts <<104,101,108,108,111>> # "hello" <<bytes>>
 
+IO.puts is_list('Example')          # true
+IO.puts is_list("Example")          # false
+IO.puts is_binary("Example")        # true
+IO.puts <<"Example">> === "Example" # true
+
 # Char Lists
 char_list = 'hello'
 # [hd|tl] = char_list
