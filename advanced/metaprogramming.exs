@@ -77,5 +77,71 @@ end
 #     _ -> "Hi"
 # end
 
-# Macro Hygiene
+## Macro Hygiene
+# A private macro is defined with defmacrop and can only be called from the module in which it was defined.
+# Private macros must be defined before the code that invokes them.
 
+## Macro Hygiene
+# How macros interact with the caller’s context when expanded is known as macro hygiene.
+# By default macros in Elixir are hygienic and will not conflict with our context:
+
+defmodule Example do
+  defmacro hygienic do
+    quote do: val = -1
+  end
+end
+
+# iex> require Example  # nil
+# iex> val = 42         # 42
+# iex> Example.hygienic # -1
+# iex> val              # 42
+
+# What if we wanted to manipulate the value of val? 
+# To mark a variable as being unhygienic we can use var!/2.
+# Let’s update our example to include another macro utilizing var!/2:
+
+defmodule Example do
+  defmacro hygienic do
+    quote do: val = -1
+  end
+  defmacro unhygienic do
+    quote do: var!(val) = -1
+  end
+end
+
+# iex> require Example    # nil
+# iex> val = 42           # 42
+# iex> Example.hygienic   # -1
+# iex> val                # 42
+# iex> Example.unhygienic # -1
+# iex> val                # -1
+
+## Binding
+defmodule Example do
+  defmacro double_puts(expr) do
+    quote do
+      IO.puts unquote(expr)
+      IO.puts unquote(expr)
+    end
+  end
+end
+
+# iex> Example.double_puts(:os.system_time)
+# 1450475941851668000
+# 1450475941851733000
+# The times are different!
+
+defmodule Example do
+  defmacro double_puts(expr) do
+    quote bind_quoted: [expr: expr] do
+      IO.puts expr
+      IO.puts expr
+    end
+  end
+end
+
+# iex> require Example # nil
+# iex> Example.double_puts(:os.system_time)
+# 1450476083466500000
+# 1450476083466500000
+# the same time printed twice.
