@@ -10,7 +10,7 @@ wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo 
 sudo apt-get update
 sudo apt-get install erlang esl-erlang elixir
 ```
-* Using my bash script
+* Or with my bash script
 ```sh
 sh elixir-install.sh
 ```
@@ -23,7 +23,7 @@ cd elixir-hola-mundo
 
 elixir hello-word.exs
 ```
-## interative mode
+## Interative mode
 ```sh
 iex -S mix
 ```
