@@ -23,7 +23,7 @@ cd elixir-hola-mundo
 
 elixir hello-word.exs
 ```
-## Interative mode
+## Interactive mode
 ```sh
 iex -S mix
 ```
