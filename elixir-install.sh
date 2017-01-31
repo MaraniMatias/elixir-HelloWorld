@@ -2,6 +2,7 @@
 echo "Add Repo.."
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
 sudo dpkg -i erlang-solutions_1.0_all.deb
+echo "Install"
 sudo apt-get update
 sudo apt install inotify-tools
 sudo apt install esl-erlang
