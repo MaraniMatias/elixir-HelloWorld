@@ -12,7 +12,7 @@ Mix is smart and will compile your changes when necessary, but it may still be n
   mix compile
 ```
 # Managing Dependencies
-(hex.pm)[Hex (NPM in NodeJS)]
+[hex.pm](Hex (NPM in NodeJS))
 ```sh
   mix local.hex
   mix deps.get
@@ -45,7 +45,7 @@ The current environment can be accessed using Mix.env. As expected, the environm
 ```
 
 # Phoenix (Tihs is more then Express in NodeJS)
-(http://www.phoenixframework.org/docs/installation)[Install Phoenix]
+[http://www.phoenixframework.org/docs/installation](Install Phoenix)
 ```sh
   mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
 
