@@ -1,4 +1,5 @@
 defmodule Ask do
+
   def chars() do
     IO.puts(
 """
@@ -11,7 +12,6 @@ Which planemo are you on?
     # It only takes the first character in the other buffered stores
     IO.getn("Which? > ")
   end
-
 
   def line() do
     planemo=get_planemo()
@@ -47,4 +47,5 @@ Which planemo are you on?
       "3" -> :mars
     end
   end
+
 end
