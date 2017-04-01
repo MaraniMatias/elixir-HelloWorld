@@ -20,7 +20,7 @@ defmodule Pascal do
   end
 
   defp triangle(list, count, rows) when count >= rows do
-    Enum.reverse(list)
+    Enum.reverse(list) # End
   end
 
   defp triangle(list, count, rows) do
@@ -33,7 +33,7 @@ defmodule Pascal do
   end
 
   defp add_row([], 0, final) do
-    [0 | final]
+    [0 | final] # End
   end
 
   defp add_row([h | t], last, new) do
