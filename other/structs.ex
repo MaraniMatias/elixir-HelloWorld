@@ -46,4 +46,3 @@ end
 IO.inspect StructDrop.fall_velocity(tower)
 IO.inspect StructDrop.fall_velocity_1(tower)
 IO.inspect StructDrop.fall_velocity_2(tower)
-
