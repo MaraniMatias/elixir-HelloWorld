@@ -19,4 +19,7 @@ defmodule Drop do
   velocity
 
   end
+  def fall_velocity({planemo, distance}) do
+    Drop.fall_velocity(planemo,distance) 
+  end
 end
