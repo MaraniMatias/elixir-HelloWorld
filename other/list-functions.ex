@@ -16,4 +16,3 @@ IO.inspect for value <- list, do: value * value
 four_bits = fn(value) -> (value >= 0) and (value < 16) end
 IO.inspect Enum.filter(list, four_bits)
 for value <- list, value >= 0, value < 16, do: IO.inspect value
-
