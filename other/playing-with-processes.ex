@@ -35,4 +35,14 @@ end
 # :another
 # Received 3: another
 
-
+#iex(5)> get_bounce = Process.whereis(:bounce)
+# #PID<0.39.0>
+#iex(6)> Process.unregister(:bounce)
+# true
+#iex(7)> test_bounce = Process.whereis(:bounce)
+# nil
+#iex(8)> send(get_bounce, "Still there?")
+# Received 3: Still there?
+# "Still there?"
+#iex(9)> Process.registered()
+# If you want to see which processes are registered
