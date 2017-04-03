@@ -1,24 +1,33 @@
 # Processes Talking Amongst Themselves
-defmodule Drop do
-  def drop do
+defmodule MphDrop do
+  def mph_drop do
+    drop_pid = spawn(Drop, :drop, [])
+    convert(drop_pid)
+  end
+
+  def convert(drop_pid) do
     receive do
-      {from, planemo, distance} ->
-        send(from, {planemo, distance, fall_velocity(planemo, distance)})
-      drop()
+      {planemo, distance} ->
+        send(drop_pid, {self(), planemo, distance})
+        convert(drop_pid)
+      {planemo, distance, velocity} ->
+        mph_velocity = 2.23693629 * velocity
+        IO.write("On #{planemo}, a fall of #{distance} meters ")
+        IO.puts("yields a velocity of #{mph_velocity} mph.")
+        convert(drop_pid)
     end
   end
-
-  defp fall_velocity(:earth, distance) when distance >= 0 do
-    :math.sqrt(2 * 9.8 * distance)
-  end
-
-  defp fall_velocity(:moon, distance) when distance >= 0 do
-    :math.sqrt(2 * 1.6 * distance)
-  end
-
-  defp fall_velocity(:mars, distance) when distance >= 0 do
-    :math.sqrt(2 * 3.71 * distance)
-  end
 end
+
+#iex(1)> pid1 = spawn(MphDrop, :mph_drop, [])
+# #PID<0.47.0>
+#iex(2)> send(pid1, {:earth, 20})
+# On earth, a fall of 20 meters
+# yields a velocity of 44.289078952755766 mph.
+# {:earth,20}
+#iex(3)> send(pid1, {:mars, 20})
+# On mars, a fall of 20 meters
+# yields a velocity of 27.250254686571544 mph.
+# {:mars,20}
 
 
