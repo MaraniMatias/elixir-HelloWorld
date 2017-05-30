@@ -3,6 +3,7 @@ My first time with elixir.
 
 ## Install Elixir
 [Installation page.](http://elixir-lang.org/install.html)
+[ErLang pag.](https://www.erlang-solutions.com/resources/download.html)
 
 * Ubuntu or Debian
 ```sh
@@ -29,6 +30,7 @@ iex -S mix
 ```
 
 ## Bibliography
+* [Introducing Elixir, 2nd Edition ](http://shop.oreilly.com/product/0636920050612.do)
 * http://elixir-lang.org/getting-started/introduction.html
 * http://elixir-lang.org/docs.html
 * https://elixirschool.com
